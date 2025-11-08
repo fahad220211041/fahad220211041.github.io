@@ -46,21 +46,24 @@
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #1f2937;
-            background-color: #f8fafc;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.7;
+            color: #1e293b;
+            background: linear-gradient(to bottom, #f8fafc 0%, #f1f5f9 100%);
+            letter-spacing: -0.01em;
         }
         
         /* Navigation */
         nav {
-            background-color: #1e3a8a;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
             color: white;
-            padding: 1rem 0;
+            padding: 1.25rem 0;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
         
         .nav-container {
@@ -105,72 +108,100 @@
         }
         
         .download-cv-btn {
-            background-color: #3b82f6;
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
             color: white;
-            padding: 0.5rem 1.5rem;
-            border-radius: 0.5rem;
+            padding: 0.75rem 2rem;
+            border-radius: 0.75rem;
             text-decoration: none;
-            transition: background-color 0.3s;
+            transition: all 0.3s ease;
             font-weight: 600;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
         
         .download-cv-btn:hover {
-            background-color: #2563eb;
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
         }
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #3b82f6 100%);
             color: white;
-            padding: 6rem 1.5rem;
+            padding: 8rem 1.5rem 6rem;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.3) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(147, 197, 253, 0.2) 0%, transparent 50%);
+            pointer-events: none;
         }
         
         .hero-content {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
         
         .avatar {
-            width: 150px;
-            height: 150px;
-            margin: 0 auto 2rem;
-            background-color: white;
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 2.5rem;
+            background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3), 0 0 0 8px rgba(255,255,255,0.1);
+            border: 3px solid rgba(255,255,255,0.2);
         }
         
         .hero h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin-bottom: 1rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
             animation: fadeInUp 0.8s ease-out;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.2);
         }
         
         .hero .subtitle {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             margin-bottom: 1rem;
             opacity: 0.95;
+            font-weight: 400;
             animation: fadeInUp 0.8s ease-out 0.2s both;
         }
         
         .hero .location {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
+            font-size: 1.15rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.85;
             animation: fadeInUp 0.8s ease-out 0.4s both;
         }
         
         .cta-text {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            padding: 1rem 2rem;
-            background-color: rgba(255,255,255,0.1);
-            border-radius: 0.5rem;
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            padding: 1.5rem 2.5rem;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 1rem;
             display: inline-block;
             animation: fadeInUp 0.8s ease-out 0.6s both;
+            border: 1px solid rgba(255,255,255,0.2);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
         }
         
         .contact-links {
@@ -209,12 +240,14 @@
         }
         
         h2 {
-            font-size: 2.5rem;
-            color: #1e3a8a;
-            margin-bottom: 2rem;
+            font-size: 2.75rem;
+            color: #0f172a;
+            margin-bottom: 3rem;
             text-align: center;
             position: relative;
-            padding-bottom: 1rem;
+            padding-bottom: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
         }
         
         h2::after {
@@ -223,10 +256,11 @@
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background-color: #3b82f6;
-            border-radius: 2px;
+            width: 100px;
+            height: 5px;
+            background: linear-gradient(90deg, #3b82f6 0%, #60a5fa 100%);
+            border-radius: 3px;
+            box-shadow: 0 2px 10px rgba(59, 130, 246, 0.3);
         }
         
         h3 {
@@ -254,17 +288,19 @@
         }
         
         .education-item {
-            background-color: white;
-            padding: 2rem;
-            border-radius: 0.5rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            border-left: 4px solid #3b82f6;
-            transition: transform 0.3s, box-shadow 0.3s;
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            padding: 2.5rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border-left: 5px solid #3b82f6;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(59, 130, 246, 0.1);
         }
         
         .education-item:hover {
-            transform: translateX(5px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            transform: translateX(8px) translateY(-4px);
+            box-shadow: 0 12px 40px rgba(59, 130, 246, 0.15);
+            border-left-color: #2563eb;
         }
         
         .education-item h3 {
@@ -290,10 +326,17 @@
         }
         
         .skill-category {
-            background-color: white;
-            padding: 2rem;
-            border-radius: 0.5rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            padding: 2.5rem;
+            border-radius: 1.25rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border: 1px solid rgba(59, 130, 246, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .skill-category:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(59, 130, 246, 0.15);
         }
         
         .skill-category h3 {
@@ -310,12 +353,21 @@
         }
         
         .skill-tag {
-            background-color: #dbeafe;
+            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
             color: #1e3a8a;
-            padding: 0.5rem 1rem;
+            padding: 0.65rem 1.25rem;
             border-radius: 2rem;
             font-size: 0.9rem;
-            font-weight: 500;
+            font-weight: 600;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(59, 130, 246, 0.1);
+        }
+        
+        .skill-tag:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+            background: linear-gradient(135deg, #bfdbfe 0%, #93c5fd 100%);
         }
         
         /* Experience Section */
@@ -326,16 +378,35 @@
         }
         
         .experience-item {
-            background-color: white;
-            padding: 2rem;
-            border-radius: 0.5rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            padding: 2.5rem;
+            border-radius: 1.25rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(59, 130, 246, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(180deg, #3b82f6 0%, #60a5fa 100%);
+            transform: scaleY(0);
+            transition: transform 0.4s ease;
         }
         
         .experience-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(59, 130, 246, 0.15);
+        }
+        
+        .experience-item:hover::before {
+            transform: scaleY(1);
         }
         
         .experience-header {
@@ -382,17 +453,20 @@
         }
         
         .achievement-card {
-            background-color: white;
-            padding: 1.5rem;
-            border-radius: 0.5rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            border-top: 3px solid #3b82f6;
-            transition: transform 0.3s, box-shadow 0.3s;
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            padding: 2rem;
+            border-radius: 1.25rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border-top: 4px solid #3b82f6;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(59, 130, 246, 0.1);
+            border-top: 4px solid #3b82f6;
         }
         
         .achievement-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(59, 130, 246, 0.2);
+            border-top-color: #2563eb;
         }
         
         .achievement-icon {
@@ -438,23 +512,37 @@
         }
         
         .project-card {
-            background-color: white;
-            border-radius: 0.5rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            border-radius: 1.5rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
             overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             cursor: pointer;
+            border: 1px solid rgba(59, 130, 246, 0.1);
         }
         
         .project-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            transform: translateY(-12px);
+            box-shadow: 0 20px 60px rgba(59, 130, 246, 0.2);
         }
         
         .project-header {
-            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #3b82f6 100%);
             color: white;
-            padding: 1.5rem;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .project-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            pointer-events: none;
         }
         
         .project-header h3 {
@@ -576,16 +664,16 @@
         
         /* Contact Section */
         .contact-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            max-width: 600px;
+            margin: 0 auto;
         }
         
         .contact-info {
-            background-color: white;
-            padding: 2rem;
-            border-radius: 0.5rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            padding: 2.5rem;
+            border-radius: 1.25rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border: 1px solid rgba(59, 130, 246, 0.1);
         }
         
         .contact-info h3 {
@@ -597,9 +685,17 @@
             align-items: center;
             gap: 1rem;
             margin-bottom: 1rem;
-            padding: 0.75rem;
-            background-color: #f8fafc;
-            border-radius: 0.25rem;
+            padding: 1rem 1.25rem;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            border-radius: 0.75rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(59, 130, 246, 0.1);
+        }
+        
+        .contact-item:hover {
+            transform: translateX(5px);
+            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
         }
         
         .contact-item a {
@@ -704,10 +800,17 @@
         
         /* Footer */
         footer {
-            background-color: #1e3a8a;
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
             color: white;
             text-align: center;
-            padding: 2rem 1.5rem;
+            padding: 3rem 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+        }
+        
+        footer p {
+            opacity: 0.9;
+            margin: 0.5rem 0;
         }
         
         /* Animations */
@@ -779,10 +882,7 @@
  </head>
  <body><!-- Navigation -->
   <nav role="navigation" aria-label="Main navigation">
-   <div class="nav-container">
-    <div class="nav-brand">
-     MAF
-    </div><button class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false">☰</button>
+   <div class="nav-container"><button class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false">☰</button>
     <ul class="nav-links">
      <li><a href="#home">Home</a></li>
      <li><a href="#about">About</a></li>
@@ -793,7 +893,6 @@
      <li><a href="#extracurriculars">Extracurriculars</a></li>
      <li><a href="#projects">Projects</a></li>
      <li><a href="#contact">Contact</a></li>
-     <li><a href="#" class="download-cv-btn" target="_blank" rel="noopener noreferrer">Download CV</a></li>
     </ul>
    </div>
   </nav><!-- Hero Section -->
@@ -809,7 +908,7 @@
     <div class="cta-text">
      Seeking leadership internship opportunities — Let's connect.
     </div>
-    <div class="contact-links"><a href="mailto:mdabdulfahad41@gmail.com" aria-label="Email Md. Abdul Fahad"> 📧 mdabdulfahad41@gmail.com </a> <a href="tel:+8801234567890" aria-label="Call Md. Abdul Fahad"> 📱 +880 ... </a> <a href="https://www.linkedin.com/in/md-abdul-fahad" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile"> 💼 LinkedIn </a>
+    <div class="contact-links"><a href="mailto:mdabdulfahad41@gmail.com" aria-label="Email Md. Abdul Fahad"> 📧 mdabdulfahad41@gmail.com </a> <a href="tel:+8801608216341" aria-label="Call Md. Abdul Fahad"> 📱 +8801608216341 </a> <a href="https://www.linkedin.com/in/md-abdul-fahad" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile"> 💼 LinkedIn </a>
     </div>
    </div>
   </header><!-- About Section -->
@@ -1023,25 +1122,13 @@
      <h3>Get In Touch</h3>
      <div class="contact-item"><span>📧</span> <a href="mailto:mdabdulfahad41@gmail.com">mdabdulfahad41@gmail.com</a>
      </div>
-     <div class="contact-item"><span>📱</span> <a href="tel:+8801234567890">+880 ...</a>
+     <div class="contact-item"><span>📱</span> <a href="tel:+8801608216341">+8801608216341</a>
      </div>
      <div class="contact-item"><span>💼</span> <a href="https://www.linkedin.com/in/md-abdul-fahad" target="_blank" rel="noopener noreferrer">linkedin.com/in/md-abdul-fahad</a>
      </div>
      <div class="contact-item"><span>📍</span> <span>Nilphamari, Saidpur, Rangpur, Bangladesh</span>
      </div>
     </div>
-    <form class="contact-form" id="contactForm" novalidate>
-     <h3>Send a Message</h3>
-     <div class="form-group"><label for="name">Name</label> <input type="text" id="name" name="name" required aria-required="true"> <span class="error-message">Please enter your name</span>
-     </div>
-     <div class="form-group"><label for="email">Email</label> <input type="email" id="email" name="email" required aria-required="true"> <span class="error-message">Please enter a valid email address</span>
-     </div>
-     <div class="form-group"><label for="message">Message</label> <textarea id="message" name="message" required aria-required="true"></textarea> <span class="error-message">Please enter your message</span>
-     </div><button type="submit" class="submit-btn">Send Message</button>
-     <div class="success-message" role="alert">
-      Thank you! Your message has been sent successfully.
-     </div>
-    </form>
    </div>
   </section><!-- Footer -->
   <footer>
@@ -1063,7 +1150,7 @@
             hero_cta: "Seeking leadership internship opportunities — Let's connect.",
             career_objective: "Enthusiastic final-year BBA student at Bangladesh Army University of Science & Technology (BAUST) with active involvement in BNCC, business clubs, and volunteering. Eager to gain practical exposure through leadership internship opportunities and contribute fresh ideas, strong ethics, and a collaborative mindset to a purpose-driven organization.",
             email_address: "mdabdulfahad41@gmail.com",
-            phone_number: "+880 ...",
+            phone_number: "+8801608216341",
             linkedin_url: "https://www.linkedin.com/in/md-abdul-fahad"
         };
 
@@ -1254,53 +1341,7 @@
             }
         });
 
-        // Contact form validation
-        const contactForm = document.getElementById('contactForm');
-        const successMessage = document.querySelector('.success-message');
 
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            let isValid = true;
-            const formGroups = contactForm.querySelectorAll('.form-group');
-            
-            formGroups.forEach(group => {
-                const input = group.querySelector('input, textarea');
-                const value = input.value.trim();
-                
-                group.classList.remove('error');
-                
-                if (!value) {
-                    group.classList.add('error');
-                    isValid = false;
-                } else if (input.type === 'email') {
-                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                    if (!emailRegex.test(value)) {
-                        group.classList.add('error');
-                        isValid = false;
-                    }
-                }
-            });
-            
-            if (isValid) {
-                successMessage.classList.add('show');
-                contactForm.reset();
-                
-                setTimeout(() => {
-                    successMessage.classList.remove('show');
-                }, 5000);
-            }
-        });
-
-        // Remove error state on input
-        contactForm.querySelectorAll('input, textarea').forEach(input => {
-            input.addEventListener('input', () => {
-                const formGroup = input.closest('.form-group');
-                if (formGroup.classList.contains('error')) {
-                    formGroup.classList.remove('error');
-                }
-            });
-        });
 
         // Element SDK implementation
         async function onConfigChange(config) {
@@ -1369,5 +1410,5 @@
             });
         }
     </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99b49303a4258c28',t:'MTc2MjU5OTcwNi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99b4bdaa33008c28',t:'MTc2MjYwMTQ1My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
