@@ -13,31 +13,62 @@
             box-sizing: border-box;
         }
         
+        html {
+            scroll-behavior: smooth;
+        }
+        
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.7;
             color: #1e293b;
             background: linear-gradient(to bottom, #f8fafc 0%, #f1f5f9 100%);
             letter-spacing: -0.01em;
+            padding-top: 70px;
         }
         
-        /* Main Header */
-        .main-header {
-            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
-            color: white;
-            padding: 2rem 3rem;
-            text-align: center;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-            position: sticky;
+        /* Navigation Menu */
+        .main-nav {
+            position: fixed;
             top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
             z-index: 1000;
+            border-bottom: 2px solid rgba(59, 130, 246, 0.3);
         }
         
-        .main-header h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0.75rem 2rem;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 0.65rem 1.25rem;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            border: 1px solid transparent;
+        }
+        
+        .nav-link:hover {
+            background: rgba(59, 130, 246, 0.2);
+            border-color: rgba(59, 130, 246, 0.4);
+            transform: translateY(-2px);
+        }
+        
+        .nav-link:active {
+            transform: translateY(0);
         }
         
         /* Container */
@@ -659,14 +690,6 @@
         
         /* Tablet Responsive */
         @media (max-width: 1024px) {
-            .main-header {
-                padding: 1.5rem 2rem;
-            }
-            
-            .main-header h1 {
-                font-size: 2rem;
-            }
-            
             section {
                 padding: 3rem 2rem;
             }
@@ -706,12 +729,18 @@
         
         /* Mobile Responsive */
         @media (max-width: 768px) {
-            .main-header {
-                padding: 1.25rem 1.5rem;
+            body {
+                padding-top: 60px;
             }
             
-            .main-header h1 {
-                font-size: 1.75rem;
+            .nav-container {
+                padding: 0.5rem 1rem;
+                gap: 0.35rem;
+            }
+            
+            .nav-link {
+                padding: 0.5rem 0.85rem;
+                font-size: 0.85rem;
             }
             
             section {
@@ -858,12 +887,19 @@
         
         /* Small Mobile Responsive */
         @media (max-width: 480px) {
-            .main-header {
-                padding: 1rem 1rem;
+            body {
+                padding-top: 110px;
             }
             
-            .main-header h1 {
-                font-size: 1.5rem;
+            .nav-container {
+                padding: 0.5rem 0.75rem;
+                gap: 0.3rem;
+                justify-content: center;
+            }
+            
+            .nav-link {
+                padding: 0.45rem 0.7rem;
+                font-size: 0.8rem;
             }
             
             section {
@@ -970,10 +1006,6 @@
         
         /* Extra Small Mobile */
         @media (max-width: 360px) {
-            .main-header h1 {
-                font-size: 1.3rem;
-            }
-            
             .hero h2 {
                 font-size: 1.5rem;
             }
@@ -1001,54 +1033,16 @@
                 padding: 0.85rem 1.25rem;
             }
         }
-
-        /* DESIGN gallery styles (added) */
-    #design-gallery h1 { text-align:center; color:#1e3a8a; margin-bottom:1rem; font-size:2rem; }
-    #design-gallery #info { text-align:center; margin-bottom:1.25rem; color:#334155; font-size:0.95rem; }
-    #design-gallery #gallery {
-      display:grid;
-      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-      gap: 12px;
-      max-width:1200px;
-      margin:0 auto;
-    }
-    #design-gallery #gallery a {
-      display:block;
-      background:white;
-      border-radius:8px;
-      overflow:hidden;
-      box-shadow: 0 4px 10px rgba(2,6,23,0.06);
-      transition: transform .18s, box-shadow .18s;
-      text-decoration:none;
-    }
-    #design-gallery #gallery a:hover { transform: translateY(-6px); box-shadow:0 10px 22px rgba(2,6,23,0.12); }
-    #design-gallery #gallery img {
-      width:100%;
-      height:160px;
-      object-fit:cover;
-      display:block;
-      vertical-align:middle;
-    }
-    #design-gallery .filename {
-      padding:8px 10px;
-      font-size:0.87rem;
-      color:#1f2937;
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
-    }
-    #design-gallery #error { color:#b91c1c; text-align:center; margin-top:1rem; }
-    #design-gallery footer { text-align:center; margin-top:1.5rem; color:#475569; font-size:0.85rem; }
-    @media (max-width:480px){ #design-gallery #gallery img{ height:120px } }
     </style>
   <style>@view-transition { navigation: auto; }</style>
   <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
   <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
  </head>
- <body><!-- Main Header -->
-  <header class="main-header">
-   <h1>My Design</h1>
-  </header>
+ <body><!-- Navigation Menu -->
+  <nav class="main-nav">
+   <div class="nav-container"><a href="#about" class="nav-link">About Me</a> <a href="#education" class="nav-link">Education</a> <a href="#experience" class="nav-link">Experience</a> <a href="#achievements" class="nav-link">Achievements &amp; Training</a> <a href="#extracurriculars" class="nav-link">Leadership &amp; Extracurriculars</a> <a href="#projects" class="nav-link">Projects</a> <a href="#contact" class="nav-link">Contact Me</a>
+   </div>
+  </nav>
   <main class="container"><!-- Hero Section -->
    <section class="hero">
     <div class="hero-content">
@@ -1266,18 +1260,7 @@
       </div>
      </article>
     </div>
-   </section>
-
-   <!-- DESIGN Gallery Section (added) -->
-   <section id="design-gallery">
-     <h1>DESIGN Gallery</h1>
-     <div id="info">Loading images from /DESIGN/ … (এটি পাবলিক রিপোর জন্য GitHub API ব্যবহার করে)</div>
-     <div id="gallery" aria-live="polite"></div>
-     <div id="error" role="alert"></div>
-     <footer>If some images don't show, try a hard refresh (Ctrl/Cmd+Shift+R). Rate-limit: 60 unauth requests/hour.</footer>
-   </section>
-   <!-- End DESIGN Gallery Section -->
-
+   </section><!-- Contact Section -->
    <section id="contact">
     <h2 class="section-title">Contact Me</h2>
     <div class="contact-container">
@@ -1310,7 +1293,6 @@
   <script>
         // Configuration object
         const defaultConfig = {
-            main_heading: "My Design",
             hero_headline: "Md. Abdul Fahad",
             hero_cta: "Seeking leadership internship opportunities — Let's connect.",
             career_objective: "Enthusiastic final-year BBA student at Bangladesh Army University of Science & Technology (BAUST) with active involvement in BNCC, business clubs, and volunteering. Eager to gain practical exposure through leadership internship opportunities and contribute fresh ideas, strong ethics, and a collaborative mindset to a purpose-driven organization.",
@@ -1454,7 +1436,6 @@
 
         // Element SDK implementation
         async function onConfigChange(config) {
-            const mainHeading = document.querySelector('.main-header h1');
             const heroHeadline = document.querySelector('.hero h2');
             const ctaText = document.querySelector('.cta-text');
             const careerObjective = document.querySelector('.about-content p');
@@ -1463,10 +1444,6 @@
             const linkedinLinks = document.querySelectorAll('a[href*="linkedin.com"]');
             const emailDisplays = document.querySelectorAll('.contact-links a[href^="mailto:"], .contact-item a[href^="mailto:"]');
             const phoneDisplays = document.querySelectorAll('.contact-links a[href^="tel:"], .contact-item a[href^="tel:"]');
-
-            if (mainHeading) {
-                mainHeading.textContent = config.main_heading || defaultConfig.main_heading;
-            }
 
             if (heroHeadline) {
                 heroHeadline.textContent = config.hero_headline || defaultConfig.hero_headline;
@@ -1514,7 +1491,6 @@
                     fontSizeable: undefined
                 }),
                 mapToEditPanelValues: (config) => new Map([
-                    ["main_heading", config.main_heading || defaultConfig.main_heading],
                     ["hero_headline", config.hero_headline || defaultConfig.hero_headline],
                     ["hero_cta", config.hero_cta || defaultConfig.hero_cta],
                     ["career_objective", config.career_objective || defaultConfig.career_objective],
@@ -1525,71 +1501,5 @@
             });
         }
     </script>
-
-  <!-- DESIGN gallery script (added) -->
-  <script>
-    (async function(){
-      // Update owner/repo/path if needed
-      const owner = "fahad220211041";
-      const repo = "fahad220211041.github.io";
-      const path = "DESIGN";
-      const apiUrl = `https://api.github.com/repos/${owner}/${repo}/contents/${encodeURIComponent(path)}`;
-
-      const infoEl = document.querySelector("#design-gallery #info");
-      const gallery = document.querySelector("#design-gallery #gallery");
-      const errorEl = document.querySelector("#design-gallery #error");
-
-      try {
-        const res = await fetch(apiUrl);
-        if (!res.ok) {
-          throw new Error("GitHub API error: " + res.status + " " + res.statusText);
-        }
-        const files = await res.json();
-
-        const imageExt = [".png", ".jpg", ".jpeg", ".gif", ".webp", ".svg"];
-        const images = Array.isArray(files) ? files.filter(f => {
-          const n = f.name.toLowerCase();
-          return imageExt.some(ext => n.endsWith(ext));
-        }) : [];
-
-        if (images.length === 0) {
-          infoEl.textContent = "এই ফোল্ডারে কোনো ছবি পাওয়া যায়নি (বা নাম/পাথ ভুল)।";
-          return;
-        }
-
-        infoEl.textContent = `Found ${images.length} image(s) in /${path}/ — click to open full size.`;
-
-        images.sort((a,b) => a.name.localeCompare(b.name, undefined, {numeric:true, sensitivity:'base'}));
-
-        images.forEach(file => {
-          const link = document.createElement("a");
-          link.href = file.download_url;
-          link.target = "_blank";
-          link.rel = "noopener noreferrer";
-
-          const img = document.createElement("img");
-          img.src = file.download_url;
-          img.alt = file.name;
-          img.loading = "lazy";
-
-          const caption = document.createElement("div");
-          caption.className = "filename";
-          caption.textContent = file.name;
-
-          link.appendChild(img);
-          link.appendChild(caption);
-          gallery.appendChild(link);
-        });
-
-      } catch (err) {
-        console.error(err);
-        if (infoEl) infoEl.textContent = "";
-        if (errorEl) {
-          errorEl.textContent = "চিত্রগুলো লোড করতে সমস্যা হয়েছে: " + err.message;
-          errorEl.innerHTML += "<br/>(Note: GitHub API rate limits unauthenticated requests to ~60/hour.)";
-        }
-      }
-    })();
-  </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99b518e081bedaf6',t:'MTc2MjYwNTE4OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99b53b2d21338c28',t:'MTc2MjYwNjU5NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
