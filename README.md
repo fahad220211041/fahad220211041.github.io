@@ -167,6 +167,16 @@
             border: 3px solid rgba(255,255,255,0.2);
         }
         
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
         .hero h1 {
             font-size: 3.5rem;
             margin-bottom: 1rem;
@@ -874,6 +884,11 @@
             .contact-container {
                 grid-template-columns: 1fr;
             }
+            
+            .profile-photo {
+                width: 120px;
+                height: 120px;
+            }
         }
     </style>
   <style>@view-transition { navigation: auto; }</style>
@@ -898,9 +913,7 @@
   </nav><!-- Hero Section -->
   <header class="hero" id="home">
    <div class="hero-content">
-    <div class="avatar" role="img" aria-label="Profile picture placeholder">
-     <svg width="100" height="100" viewbox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="35" r="20" fill="#1e3a8a" /> <path d="M20 85 C20 65, 30 55, 50 55 C70 55, 80 65, 80 85 Z" fill="#1e3a8a" />
-     </svg>
+    <div class="avatar" role="img" aria-label="Profile picture of Md. Abdul Fahad"><img src="./phot%20for%20github/Md.%20Abdul%20Fahad.jpg" alt="Md. Abdul Fahad" class="profile-photo" onerror="this.style.display='none'; this.parentElement.innerHTML='<svg width=\'100\' height=\'100\' viewBox=\'0 0 100 100\' fill=\'none\' xmlns=\'http://www.w3.org/2000/svg\'><circle cx=\'50\' cy=\'35\' r=\'20\' fill=\'#1e3a8a\'/><path d=\'M20 85 C20 65, 30 55, 50 55 C70 55, 80 65, 80 85 Z\' fill=\'#1e3a8a\'/></svg>';">
     </div>
     <h1>Md. Abdul Fahad</h1>
     <p class="subtitle">Final-year BBA Student at BAUST</p>
@@ -1410,5 +1423,5 @@
             });
         }
     </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99b4bdaa33008c28',t:'MTc2MjYwMTQ1My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99b4ce23958d8c28',t:'MTc2MjYwMjEyOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
